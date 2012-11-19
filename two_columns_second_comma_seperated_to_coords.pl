@@ -14,6 +14,7 @@ open FILE, "$filename" or die $!;
 		my @line = split('\t',$_);
 		my @commas = split(',',$line[1]);
 		foreach my $entity (@commas){
+			$entity =~ s/FF://g;
 		print "$line[0]\t$entity\t$ont\n";
 		}		
 	}
